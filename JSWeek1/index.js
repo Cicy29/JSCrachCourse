@@ -54,6 +54,8 @@ Trader = class {
     this.vinyl = vinyl;
     this.records.push(this);
   }
+  
+};
 
   Vinyl = class {
     constructor(name, title, date, genre) {
@@ -83,13 +85,7 @@ clark = new Seller(
   10
 );
 selina = new Purchaser("Selina Kyle", 32, "Berlin", "Nirvana", "Nevermind", 8);
-selina = new Trader(
-  "Jean Grey",
-  32,
-  "Berlin",
-  "Celia Cruz",
-  "Mi vida es cantar"
-);
+selina = new Trader("Jean Grey",32,"Berlin","Celia Cruz","Mi vida es cantar");
 bruce = new Trader("Bruce Wayne", 32, "Berlin", "David Bowie", "Aladin Sane");
 
 shuri = new Trader("Shuri Panther", 32, "Berlin", "Rihanna", "Loud");
