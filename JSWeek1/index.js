@@ -1,4 +1,4 @@
-// This app connects music lovers and nostalgic of vinyls. Users can exchange, sell or buy vinyls they may not find in stores."
+// This app connects music lovers and nostalgics of vinyls. Users can exchange, sell or buy vinyls they may not find in stores."
 
 Seller = class {
   constructor(name, age, location, artist, album, price) {
