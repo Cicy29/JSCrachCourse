@@ -66,6 +66,7 @@ Trader = class {
       this.records = [];
     }
   };
+
   listOfAllRecordsAvailable() {
     this.records.forEach(printAllRecords);
 
@@ -76,14 +77,7 @@ Trader = class {
   }
 };
 
-clark = new Seller(
-  "Clark Kent",
-  27,
-  "Berlin",
-  "Amy Winehouse",
-  "Back to Black",
-  10
-);
+clark = new Seller("Clark Kent",27,"Berlin","Amy Winehouse","Back to Black",10);
 selina = new Purchaser("Selina Kyle", 32, "Berlin", "Nirvana", "Nevermind", 8);
 selina = new Trader("Jean Grey",32,"Berlin","Celia Cruz","Mi vida es cantar");
 bruce = new Trader("Bruce Wayne", 32, "Berlin", "David Bowie", "Aladin Sane");
