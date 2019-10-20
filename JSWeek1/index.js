@@ -6,6 +6,7 @@ User = class {
     this.userName = name;
     this.age = age;
     this.location = location;
+    this.records= [];
   }
   welcome(user) {
     console.log("Welcome to WonderVinyl " + user.name + " !");
