@@ -56,10 +56,10 @@ davidBowie = new Vinyl("David Bowie", "Aladin Sane", 1973, "Pop rock");
 
 clark = new User("Clark Kent", 27, "Berlin");
 selina = new User("Selina Kyle", 22, "Berlin");
-selina = new User("Jean Grey", 32, "Berlin");
+jean = new User("Jean Grey", 32, "Berlin");
 bruce = new User("Bruce Wayne", 44, "Berlin");
 shuri = new User("Shuri Panther", 18, "Berlin");
 
-clark.exchangeRecord("Rihanna");
-shuri.buyRecord("Nirvana");
-bruce.sellRecord("David Bowie");
+clark.exchangeRecord(rihanna);
+shuri.buyRecord(nirvana);
+bruce.sellRecord(davidBowie);
