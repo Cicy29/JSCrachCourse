@@ -11,22 +11,18 @@ User = class {
     console.log("Welcome to WonderVinyl " + user.name + " !");
   }
 
-  sellRecord(vinyl) {
+  sellRecord() {
     console.log("Great deal!");
-    this.vinyl = vinyl;
-    this.records.push(this);
   }
 
   buyRecord(vinyl) {
     console.log("Thank you for your purchase. Discover what we have in store!");
     this.vinyl = vinyl;
-    this.records.push(this);
+    this.records.push(vinyl);
   }
 
-  exchangeRecord(vinyl) {
+  exchangeRecord() {
     console.log("Excellent! Keep trading!");
-    this.vinyl = vinyl;
-    this.records.push(this);
   }
 };
 
@@ -37,17 +33,17 @@ Vinyl = class {
     this.releaseDate = date;
     this.genre = genre;
     this.price = price;
-    if (this.priceNotAvailable) {
-      console.log("Please select Exchange option.");
+    if (!price) {
+      throw new Error("Please select Exchange option.");
     }
     this.records = [];
   }
+  printAllRecordsAvailable() {
+    this.records.forEach(printAllRecords);
+  }
 };
 
-printAllRecordsAvailable();
-this.records.forEach(printAllRecords);
-
-printAllRecords = vinyl => console.log(vinyl.nameArtist);
+printAllRecords = vinyl => console.log(vinyl.name);
 
 amyWinehouse = new Vinyl("Amy Winehouse", "Back to Black", 2006, "Soul");
 nirvana = new Vinyl("Nirvana", "Nevermind", 1991, "Rock");
@@ -55,9 +51,9 @@ rihanna = new Vinyl("Rihanna", "Loud", 2010, "Pop");
 davidBowie = new Vinyl("David Bowie", "Aladin Sane", 1973, "Pop rock");
 
 clark = new User("Clark Kent", 27, "Berlin");
-selina = new User("Selina Kyle", 22, "Berlin");
+selina = new User("Selina Kyle", 22, "Leipzig");
 jean = new User("Jean Grey", 32, "Berlin");
-bruce = new User("Bruce Wayne", 44, "Berlin");
+bruce = new User("Bruce Wayne", 44, "Munich");
 shuri = new User("Shuri Panther", 18, "Berlin");
 
 clark.exchangeRecord(rihanna);
