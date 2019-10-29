@@ -16,9 +16,8 @@ module.exports = class User {
 
     buyRecord(vinyl) {
         console.log("Thank you for your purchasing " + vinyl.nameArtist + ", " + "Discover what we have in store!");
-        this.vinyl = vinyl;
-        // this.records.push(vinyl);
-        vinyl.records.push(vinyl)
+        this.vinyl = vinyl.name;
+        vinyl.records.push(this)
     }
 
     exchangeRecord() {
