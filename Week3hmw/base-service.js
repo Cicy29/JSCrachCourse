@@ -1,39 +1,28 @@
-const fe = require('fs')
+const fs = require('fs')
+const Flatted = require('flatted/cjs');
 
 module.exports = class Service {
-    constructor(model, dbPath)
-    this.model = model;
-    this.dbPath = dbPath;
-
-}
-
-async function main() {
-    const jean = new User("Jean Grey", 32, "Berlin");
-    const bruce = new User("Bruce Wayne", 44, "Munich");
-    const shuri = new User("Shuri Panther", 18, "Berlin");
-
-    const rihanna = new Vinyl("Rihanna", "Loud", 2010, "Pop");
-    const davidB = new Vinyl("David Bowie", "Aladin Sane", 1973, "Pop rock");
-
-    selina.buyRecord(amyW)
-    clark.buyRecord(nirv)
-    jean.exchangeRecord(davidB)
-
-    await UserService.add(jean)
-    await UserService.add(bruce)
-    const people = await UserService.findAll()
-
-    console.log(people)
-    const people = await UserService.findAll()
-
-    await VinylService.add(amyW)
-    console.log(people[0].name)
-
-    const Vinyl = await VinylService.find();
-    await UserService.del(1)
+        constructor(model, dbPath) {
+            this.model = model
+            this.dbPath = dbPath
+        }
 
 
-    console.log(newPeople[0].name)
-}
+        async findAll() {
+            return new Promise((resolve, reject) => {
+                fs.readFile(this.dbPath, 'utf8', async (err, file) => {
+                    if (err) {
+                        if (err.code == 'ENOENT') {
+                            await this.saveAll([])
+                            return resolve([])
+                        }
 
-main()
+                        return reject(err)
+                    }
+
+                    const items = Flatted.parse(file).map(this.model.create)
+
+                    resolve(items)
+                })
+            })
+        }
