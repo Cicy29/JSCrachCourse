@@ -30,9 +30,6 @@ const loadedFile = Database.load()
 const amyW = Vinyl.create(loadedFile)
 console.log(loadedFile.records[0].name)
 
-const UserService = require('./services/user-service')
-const VinylService = require('./services/vinyl-service')
-
 console.log('Hello World!')
 console.log('Hello World!')
 
