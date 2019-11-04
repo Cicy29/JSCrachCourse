@@ -1,8 +1,8 @@
 const BaseService = require('./base-service')
-const UserModel = require('./models/user')
+const UserModel = require('./user')
 
 
-class PersonService extends BaseService {
+class UserService extends BaseService {
     constructor() {
         super(UserModel, `${__dirname}/../person-database.json`)
 

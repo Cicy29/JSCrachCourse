@@ -2,33 +2,33 @@
 const Database = require('./database')
 const Vinyl = require('./vinyl')
 const User = require('./user')
-const UserService = require('./services/-userservice')
-const VinylService = require('./services/-vinylservice')
+const UserService = require('./user-service')
+const VinylService = require('./vinyl-service')
 
-const loadedFile = Database.load('vinyl.json', (err, loadedFile) => {
-    console.log('VinylLand')
+Database.load('vinyl.json', (err, loadedFile) => {
+    console.log(loadedFile)
 })
 
 const clark = new User("Clark Kent", 27, "Berlin");
 const selina = new User("Selina Kyle", 22, "Leipzig");
 
-const amyW = new Vinyl("Amy Winehouse", "Back to Black", 2006, "Soul");
+let amyW = new Vinyl("Amy Winehouse", "Back to Black", 2006, "Soul");
 const nirv = new Vinyl("Nirvana", "Nevermind", 1991, "Rock");
 selina.buyRecord(amyW)
 clark.buyRecord(nirv)
 
-
+const davidB = new Vinyl("David Bowie", "Aladin Sane", 1973, "Pop rock");
 
 Database.save('vinyl.json', amyW)
 Database.save('./vinyl.json', nirv)
 Database.save('./vinyl.json', davidB)
 Database.save('user.json', clark)
 Database.save('user.json', selina)
-Database.load('vinyl.json')
+// Database.load('vinyl.json')
 
-const loadedFile = Database.load()
-const amyW = Vinyl.create(loadedFile)
-console.log(loadedFile.records[0].name)
+// const loadedFile = Database.load()
+// amyW = Vinyl.create(loadedFile)
+// console.log(loadedFile.records[0].name)
 
 console.log('Hello World!')
 console.log('Hello World!')
@@ -39,7 +39,6 @@ async function main() {
     const shuri = new User("Shuri Panther", 18, "Berlin");
 
     const rihanna = new Vinyl("Rihanna", "Loud", 2010, "Pop");
-    const davidB = new Vinyl("David Bowie", "Aladin Sane", 1973, "Pop rock");
 
     selina.buyRecord(amyW)
     clark.buyRecord(nirv)
@@ -49,12 +48,12 @@ async function main() {
     const people = await UserService.findAll()
 
     console.log(people)
-    const people = await UserService.findAll()
+    // people = await UserService.findAll()
 
     await VinylService.add(amyW)
     console.log(people[0].name)
 
-    const Vinyl = await VinylService.find();
+    // const Vinyl = await VinylService.find();
     await UserService.del(1)
 
 
@@ -63,6 +62,8 @@ async function main() {
 }
 
 main()
+
+
 
 // amyW.printRecordsNames()
 // console.log(amyW.nameArtist)

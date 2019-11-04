@@ -10,13 +10,18 @@ const fs = require('fs')
 //     })
 // }
 
+
 module.exports = {
-    save(data) {
-        fs.writeFile(filename, JSON.stringify(data));
+    save(filename, data) {
+        fs.writeFile(filename, JSON.stringify(data), (err) => {
+            console.log(err)
+        });
     },
 
-    load() {
-        return JSON.parse(fs.readFileSync('data.json'))
+    load(filename, callback) {
+        fs.readFile(filename, 'utf8', (err, file) => {
+            callback(err, JSON.parse(file));
+        })
     }
 
 }
