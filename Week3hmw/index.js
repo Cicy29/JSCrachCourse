@@ -30,8 +30,8 @@ const loadedFile = Database.load()
 const amyW = Vinyl.create(loadedFile)
 console.log(loadedFile.records[0].name)
 
-const PersonService = require('./services/person-service')
-const MeetupService = require('./services/meetup-service')
+const UserService = require('./services/user-service')
+const VinylService = require('./services/vinyl-service')
 
 console.log('Hello World!')
 console.log('Hello World!')
@@ -44,32 +44,28 @@ async function main() {
     const rihanna = new Vinyl("Rihanna", "Loud", 2010, "Pop");
     const davidB = new Vinyl("David Bowie", "Aladin Sane", 1973, "Pop rock");
 
-    armagan.attend(wtmb)
-    mert.attend(wtmb)
-    wtmb.report()
+    selina.buyRecord(amyW)
+    clark.buyRecord(nirv)
 
-    await PersonService.add(mert)
-    await PersonService.add(armagan)
-    const people = await PersonService.findAll()
+    await UserService.add(selina)
+    await UserService.add(clark)
+    const people = await UserService.findAll()
 
     console.log(people)
-    const people = await PersonService.findAll()
+    const people = await UserService.findAll()
 
-    await MeetupService.add(wtmb)
+    await VinylService.add(amyW)
     console.log(people[0].name)
 
-    const meetup = await MeetupService.find();
-    await PersonService.del(1)
+    const Vinyl = await VinylService.find();
+    await UserService.del(1)
 
-    meetup.report()
-    const newPeople = await PersonService.findAll()
+
 
     console.log(newPeople[0].name)
 }
 
 main()
-
-
 
 // amyW.printRecordsNames()
 // console.log(amyW.nameArtist)
