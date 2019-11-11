@@ -1,0 +1,19 @@
+[{
+        "name": "Clark Kent",
+        "age": 27,
+        "location": "Berlin",
+        "vinyl": [
+            "Amy Winehouse"
+        ],
+        "id": 1
+    },
+    {
+        "name": "Selina Kyle",
+        "age": 22,
+        "location": "Berlin",
+        "vinyl": [
+            "David Bowie"
+        ],
+        "id": 2
+    }
+]
