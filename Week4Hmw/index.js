@@ -23,7 +23,7 @@ app.get("/user/all", async (req, res) => {
     })
 })
 
-app.post("/user", (req, res) => {
+app.post("/user", async (req, res) => {
     const user = await UserService.add(req.body)
     res.send(user)
 
